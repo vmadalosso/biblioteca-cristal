@@ -1,23 +1,17 @@
-nav {
+nav ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  line-height: 0;
+  
+  gap: 14px;
+  font-size: 1rem;
+  
+  list-style: none;
   padding-block: 32px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
-  font-size: 1rem;
-}
-
 nav ul li:last-child {
-  margin-right: 80px;
+  margin-right: 30px;
 }
 
 .divider {
@@ -25,4 +19,20 @@ nav ul li:last-child {
   width: 100px;
   height: 1px;
   background-color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: center; /* Centraliza a navegação em telas menores */
+  }
+
+  nav ul {
+    flex-direction: column; /* Empilha os itens */
+    align-items: center; /* Centraliza os itens na coluna */
+    gap: 10px; /* Ajusta o espaçamento vertical */
+  }
+
+  nav ul li:last-child {
+    margin-right: 0;
+  }
 }

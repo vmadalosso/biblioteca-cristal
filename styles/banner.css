@@ -1,0 +1,40 @@
+.container {
+  position: relative;
+  width: 100%; /* Certifique-se de ocupar toda a largura */
+  height: auto; /* Altura adaptável ao layout */
+  max-height: 600px; /* Opcional: limite de altura */
+  overflow: hidden;
+}
+
+.container img {
+  max-width: 1440px;
+  height: auto;
+}
+
+.container .logo {
+  position: absolute;
+  bottom: 20%; /* Ajuste para manter consistente em várias telas */
+  left: 10%;
+  width: 411px; /* Ajuste o tamanho do logo para responsividade */
+  height: auto;
+}
+
+.container .tagline {
+  position: absolute;
+  bottom: 30%; /* Ajuste para ficar no local correto */
+  left: 15%;
+  z-index: 10;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--text-color-subtitles);
+}
+
+.container .highlight {
+  position: absolute;
+  top: 30%; /* Alinhado na parte branca do banner */
+  right: 10%;
+  max-width: 300px;
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: right; /* Alinha o texto para ficar limpo */
+}
