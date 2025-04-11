@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  line-height: 0;
+  padding-block: 32px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-size: 1rem;
+}
+
+nav ul li:last-child {
+  margin-right: 80px;
+}
+
+.divider {
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background-color: var(--text-color);
+}

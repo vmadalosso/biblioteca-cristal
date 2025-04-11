@@ -1,6 +1,132 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+:root {
+    font-family: "Montserrat", sans-serif;
+
+    --background-color: #E5E5E5;
+    --nav-color: #0D0D0D;
+    --text-color: #FCFCFC;
+    --text-color-subtitles: #3F1111;
+
+    --font-title: "Noto Serif", serif;
+}
+
+body {
+    font-size: 1.25rem;
+    color: var(--text-color);
+
+    background-color: var(--background-color);
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--background-color);
+}
+
+.container {
+    padding-inline: auto;
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+.bg-nav-color {
+    background-color: var(--nav-color);
+}
+
+/*
+header.banner {
+    background: url('assets/images/bg-home.png') no-repeat center center; 
+    background-size: cover;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+header.banner ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+header.banner ul li {
+    margin: 0 10px;
+}
+
+header.banner ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+header.banner ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+
+.content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    flex: 1;
+}
+
+.content p {
+    flex: 2;
+    text-align: justify;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer .social a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .social a img {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+}
+
+footer .social a:hover {
+    text-decoration: underline;
+}
+*/
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    header ul {
+        flex-direction: column;
+    }
+}
