@@ -1,0 +1,33 @@
+header {
+  background-color: var(--bg-nav-color);
+  color: var(--text-color: #FCFCFC);
+  padding: 24px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  gap: 14px;
+  padding-right: 32px;
+}
+
+.divider {
+  display: block;
+  width: 80px;
+  height: 1px;
+  background-color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
