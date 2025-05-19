@@ -19,8 +19,10 @@
 <body>
 
   <header>
+    <button class="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+
     <nav role="navigation" aria-label="Menu principal">
-      <ul>
+      <ul class="menu">
         <li><a href="#">HOME</a></li>
         <li><a href="#">HISTÓRIA</a></li>
         <li><a href="#">ATIVIDADES</a></li>
@@ -51,21 +53,25 @@
           Cristal, que a gere desde então.
           </br></br>
           O objetivo maior do trabalho desenvolvido é democratizar o acesso à
-          leitura e ao conhecimento...</p>
-        <a href="#" class="btn" aria-label="Saiba mais sobre a história da Biblioteca Comunitária do Cristal">Ler
-          mais</a>
+          leitura e ao conhecimento... <a href="#" class="btn"
+            aria-label="Saiba mais sobre a história da Biblioteca Comunitária do Cristal">Ler
+            mais</a></p>
+        </br></br>
+        <div class="divider-card"></div>
       </article>
     </section>
 
     <section class="section activities">
       <article class="content-card">
+        <div class="divider-card"></div>
+        </br></br>
         <h2>Atividades & Eventos</h2>
-        <p>Desde a sua fundação o Clube de Mães e a Biblioteca Comunitária do Cristal promovem oficinas lliterárias,
+        <p>Desde a sua fundação o Clube de Mães e a Biblioteca Comunitária do Cristal promovem oficinas literárias,
           entre outras
           atividades relacionadas ao livro e à leitura.
           </br></br>
-          Os saraus literários em comemoração ao aniversário da biblioteca acontecem...</p>
-        <a href="#" class="btn" aria-label="Descubra as atividades e eventos da biblioteca">Ler mais</a>
+          Os saraus literários em comemoração ao aniversário da biblioteca acontecem... <a href="#" class="btn"
+            aria-label="Descubra as atividades e eventos da biblioteca">Ler mais</a></p>
       </article>
       <img src="assets/atividades-thumbnail.png" alt="Imagem representando as atividades e eventos da biblioteca" />
     </section>
@@ -75,15 +81,17 @@
     <div class="social">
       <ul>
         <li>
-          <a href="#" aria-label="Visite nosso Instagram"><img src="assets/instagram.png"
-              alt="Ícone do Instagram" />@biblioteca_cristal</a>
+          <a href="https://www.instagram.com/biblioteca_cristal/" target="_blank"
+            aria-label="Visite nosso Instagram"><img src="assets/instagram.png"
+              alt="Ícone do Instagram" /><span>@biblioteca_cristal</span></a>
         </li>
         <li>
-          <a href="#" aria-label="Visite nosso Facebook"><img src="assets/facebook.png"
-              alt="Ícone do Facebook" />@BiblioCristal</a>
+          <a href="https://www.facebook.com/BiblioCristal" target="_blank" aria-label="Visite nosso Facebook"><img
+              src="assets/facebook.png" alt="Ícone do Facebook" /><span>@BiblioCristal</span></a>
         </li>
         <li>
-          <a href="#" aria-label="Visite o site do Clube das Mães"><img src="assets/facebook.png" />Clube das Mães</a>
+          <a href="https://sites.google.com/view/clube-de-maes-cristal" target="_blank"
+            aria-label="Visite o site do Clube das Mães"><img src="assets/clube.png" /><span>Clube de Mães</span></a>
         </li>
       </ul>
     </div>
@@ -94,6 +102,7 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 
 </html>

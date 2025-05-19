@@ -1,3 +1,4 @@
+/* ====== RESET ====== */
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +6,12 @@
 }
 
 :root {
-  --color-bg-main:#fbfbfb; /* Fundo da <main>, tom suave */
+  --color-bg-main: #fbfbfb; /* Fundo da <main>, tom suave */
   --color-bg-nav-footer: #142126; /* Fundo do menu e footer */
-
-  --color-text-primary: #FCFCFC; /* Cor dos textos gerais (p, h2, menu, footer) */
-  --color-text-secondary: #3F1111; /* Cor dos subtítulos e do destaque na tagline */
-
+  
+  --color-text-primary: #FCFCFC; /* Cor dos textos gerais */
+  --color-text-secondary: #3F1111; /* Cor dos subtítulos e destaque */
+  
   --line-height-default: 1.6;
   --section-padding: 40px;
   
@@ -31,10 +32,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ====== HEADER & NAV ====== */
+header {
+  position: relative;
+}
+
 header nav {
   position: fixed;
   top: 0;
-  left:0;
+  left: 0;
   width: 100%;
   z-index: 100;
   background-color: var(--color-bg-nav-footer);
@@ -44,39 +50,46 @@ header nav {
   align-items: center;
 }
 
-header nav ul {
+nav ul {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
   padding: 0 var(--font-size-lg);
 }
 
-header nav ul li {
+nav ul li {
   list-style: none;
 }
 
-header nav ul li a {
+nav ul li a {
   color: var(--color-text-primary);
   text-decoration: none;
 }
 
-header nav ul li a:hover {
+nav ul li a:hover {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.divider {
-  width: 80px;
-  height: 1px;
-  background-color: var(--color-text-primary);
-  margin-right: var(--spacing-lg);
+/* ====== MENU HAMBÚRGUER ====== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--color-text-primary);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 101;
 }
 
+/* ====== BANNER & LOGO ====== */
 .branding img {
   width: 100%;
-  max-width: 100%;
   max-height: 810px;
   height: auto;
-  object-fit: cover; /* Garante que a imagem se ajuste sem distorcer */
+  object-fit: cover;
 }
 
 .logo-container {
@@ -85,7 +98,6 @@ header nav ul li a:hover {
   left: 20%;
   z-index: 10;
   transform: translate(-50%, -50%);
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,7 +107,6 @@ header nav ul li a:hover {
 .logo-container img {
   width: 411px;
   height: auto;
-  object-fit: cover;
 }
 
 .tagline {
@@ -103,28 +114,28 @@ header nav ul li a:hover {
   color: var(--color-text-secondary);
   position: absolute;
   top: 80%;
-  width: 450px; /* Evita que o texto se espalhe demais */
+  width: 450px;
 }
 
 .highlight {
   color: var(--color-text-secondary);
   position: absolute;
-  top: 80%;
+  top: 90%;
   left: 75%;
   transform: translate(-50%, -50%);
   width: 600px;
 }
 
+/* ====== MAIN ====== */
 main {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
-
   background-color: var(--color-bg-main);
 }
 
-main img {
-  width: 500px;
+.section img {
+  width: 450px;
   height: auto;
   object-fit: cover;
 }
@@ -133,20 +144,35 @@ main img {
   display: flex;
   justify-content: center;
   gap: 140px;
-  margin: 40px 130px;
+  margin: 30px 130px;
+}
 
+section:last-child {
+  margin-bottom: 130px;
 }
 
 .content-card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
   max-width: 500px;
 }
 
 .content-card h2 {
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
+.divider-card {
+  width: 140px;
+  height: 1px;
+  background-color: var(--color-bg-nav-footer);
+  margin: var(--spacing-sm) auto;
+}
+
+/* ====== FOOTER ====== */
 footer {
   display: flex;
   flex-direction: column;
@@ -177,9 +203,10 @@ footer {
 }
 
 .social img {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   object-fit: cover;
+  filter: invert(100%) brightness(200%);
 }
 
 .divider-footer {
@@ -197,15 +224,114 @@ footer p {
   font-size: 12px;
 }
 
+/* ====== RESPONSIVIDADE ====== */
 @media (max-width: 768px) {
-  .logo-container {
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
+  /* MENU HAMBÚRGUER */
+  .menu-toggle {
+    display: block;
   }
 
-  .logo-container img {
-    width: 280px;
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-bg-nav-footer);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: var(--spacing-lg) 0;
+    border-bottom: 2px solid var(--color-text-primary);
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  /* HEADER AJUSTADO */
+  .branding img {
+    max-height: 400px;
+  }
+
+  .logo-container {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .tagline {
+    position: static;
+    max-width: 90%; /* Evita que ultrapasse a tela */
+    text-align: center;
+    font-size: var(--font-size-base);
+    margin: var(--spacing-sm) auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .highlight {
+    display: none;
+  }
+
+  /* MAIN AJUSTADO */
+  .section {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+    margin: 0 auto;
+    padding: var(--spacing-lg) 0;
+  }
+
+  section:last-child {
+    margin-bottom: 16px;
+  }
+
+  .content-card {
+    order: -1;
+    max-width: 90%;
+    padding: var(--spacing-md);
+  }
+
+  .section img {
+    width: 100%;
+    max-width: 400px;
+    margin-top: var(--spacing-md);
+  }
+
+  footer {
+    padding: var(--spacing-lg); /* Aumenta o espaçamento interno */
+    min-height: auto; /* Permite que o conteúdo expanda naturalmente */
+  }
+
+  .social ul {
+    flex-direction: row; /* Mantém os ícones em linha */
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .social ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .social ul li a span {
+    display: none; /* Esconde o texto ao lado dos ícones */
+  }
+
+  .social img {
+    width: 24px; /* Define um tamanho adequado */
+    height: auto;
+    object-fit: contain;
+    filter: invert(100%) brightness(200%);
+  }
+
+  .divider-footer {
+    width: 80%;
+    margin: var(--spacing-md) auto;
   }
 }
