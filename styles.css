@@ -6,6 +6,8 @@
 }
 
 :root {
+  color-scheme: light only; /* Garante que o site ignore o dark mode do sistema */
+
   --color-bg-main: #fbfbfb; /* Fundo da <main>, tom suave */
   --color-bg-nav-footer: #142126; /* Fundo do menu e footer */
   
@@ -30,6 +32,9 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: #fbfbfb; /* Define um fundo claro fixo */
+  color: var(--color-text-secondary); /* Mantém contraste adequado */
 }
 
 /* ====== HEADER & NAV ====== */
@@ -68,6 +73,13 @@ nav ul li a {
 
 nav ul li a:hover {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.divider {
+  width: 80px;
+  height: 1px;
+  background-color: var(--color-text-primary);
+  margin-right: var(--spacing-lg);
 }
 
 /* ====== MENU HAMBÚRGUER ====== */
@@ -222,6 +234,44 @@ footer p {
 
 .developer {
   font-size: 12px;
+}
+
+/* ====== PAGINA DE CONTATO ===== */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.contact-page form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+}
+
+.contact-page input, .contact-page textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-page button {
+  background-color: var(--color-bg-nav-footer);
+  color: var(--color-text-primary);
+  padding: var(--spacing-md);
+  border: none;
+  cursor: pointer;
+  margin-bottom: var(--spacing-lg);
+}
+
+.contact-page iframe {
+  max-width: 600px;
+  width: 100%;
+  height: 300px;
+  margin: var(--spacing-lg);
 }
 
 /* ====== RESPONSIVIDADE ====== */
