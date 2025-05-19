@@ -326,7 +326,7 @@ footer p {
     display: none;
   }
 
-  /* MAIN AJUSTADO */
+  /* MAIN HOME AJUSTADO */
   .section {
     flex-direction: column;
     gap: var(--spacing-md);
@@ -351,6 +351,25 @@ footer p {
     margin-top: var(--spacing-md);
   }
 
+  /* PAGINA DE CONTATO */
+  .contact-container {
+    flex-direction: column; /* Empilha o formulário e o mapa */
+    align-items: center; /* Centraliza os elementos */
+    gap: var(--spacing-md);
+    max-width: 90%; /* Reduz a largura para se ajustar melhor à tela */
+  }
+
+  .contact-page form,
+  .contact-page iframe {
+    width: 100%; /* Ambos ocupam a largura total */
+    max-width: 500px; /* Limita o tamanho máximo para evitar expansão excessiva */
+  }
+
+  .contact-page textarea {
+    height: 200px; /* Aumenta área de digitação para conforto */
+  }
+
+  /* FOOTER */
   footer {
     padding: var(--spacing-lg); /* Aumenta o espaçamento interno */
     min-height: auto; /* Permite que o conteúdo expanda naturalmente */
