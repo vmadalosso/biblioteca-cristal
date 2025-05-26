@@ -236,23 +236,186 @@ footer p {
   font-size: 12px;
 }
 
-/* ====== PAGINA DE CONTATO ===== */
-.contact-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* ====== PAGINA DA HISTORIA ===== */
+.timeline-page {
+  max-width: 900px;
+  margin: auto;
   text-align: center;
   padding: var(--spacing-lg);
 }
 
-.contact-page form {
+.timeline-page h1 {
+  margin-bottom: 20px;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding-left: 30px; /* Ajuste para a linha da timeline */
+  border-left: 3px solid var(--color-text-secondary);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-text-secondary);
+  border-radius: 50%;
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-date {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  color: var(--color-text-secondary);
+  width: 120px; /* Definir uma largura fixa para alinhar melhor */
+  text-align: right;
+  position: relative;
+}
+
+.timeline-content {
+  background-color: var(--color-bg-main);
+  padding: var(--spacing-md);
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 75%;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.timeline-content:hover {
+  transform: scale(1.02);
+}
+
+/* ====== PAGINA DE ATIVIDADES ===== */
+.activities-page {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+/* Correção global dos títulos h2 */
+.activity-category h2 {
+  color: var(--color-text-secondary); /* Agora todos os títulos são visíveis */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 24px auto;
+}
+
+/* Melhor organização das listas */
+.activity-list,
+.action-list,
+.event-list,
+.award-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Estilos para itens */
+.activity-item,
+.action-item,
+.event-item,
+.award-item {
+  background-color: var(--color-bg-main);
+  padding: var(--spacing-md);
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustando a seção de premiações */
+.award-item ul {
+  text-align: left;
+  margin-top: var(--spacing-sm);
+  list-style: none;
+}
+
+.award-item ul li {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Layout responsivo das imagens do jornal */
+.news-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.news-image-container img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.news-image-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para abrir imagens em tela cheia */
+.fullscreen-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.fullscreen-image img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* ====== PAGINA DE CONTATO ===== */
+.contact-page {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 80px;
+  max-width: 80%;
+  margin: auto;
+}
+
+.contact-form {
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  width: 100%;
+  width: 50%;
+  margin-bottom: 40px;
 }
 
-.contact-page input, .contact-page textarea {
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+.contact-form input, .contact-form textarea {
   width: 100%;
   padding: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
@@ -263,8 +426,13 @@ footer p {
   color: var(--color-text-primary);
   padding: var(--spacing-md);
   border: none;
+  border-radius: 8px;
   cursor: pointer;
   margin-bottom: var(--spacing-lg);
+}
+
+.contact-map {
+  width: 50%;
 }
 
 .contact-page iframe {
@@ -351,22 +519,82 @@ footer p {
     margin-top: var(--spacing-md);
   }
 
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-date {
+    text-align: left;
+    width: auto;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+
+  /* Oculta o ponto na versão mobile */
+  .timeline-date::before {
+    display: none;
+  }
+
+  .activities-page {
+    max-width: 100%;
+    padding: var(--spacing-md);
+  }
+
+  .activity-category h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Ajustando o layout dos eventos e ações */
+  .activity-list,
+  .action-list,
+  .event-list,
+  .award-list {
+    gap: var(--spacing-sm);
+  }
+
+  .activity-item,
+  .action-item,
+  .event-item,
+  .award-item {
+    padding: var(--spacing-sm);
+  }
+
+  /* Ajustando a seção de imagens do jornal */
+  .news-image-container {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+  }
+
+  .news-image-container img {
+    max-width: 80%;
+  }
+  
   /* PAGINA DE CONTATO */
-  .contact-container {
+  .contact-page {
     flex-direction: column; /* Empilha o formulário e o mapa */
+    text-align: center;
     align-items: center; /* Centraliza os elementos */
     gap: var(--spacing-md);
     max-width: 90%; /* Reduz a largura para se ajustar melhor à tela */
   }
 
-  .contact-page form,
-  .contact-page iframe {
+  .contact-form,
+  .contact-map {
     width: 100%; /* Ambos ocupam a largura total */
     max-width: 500px; /* Limita o tamanho máximo para evitar expansão excessiva */
+    margin-bottom: 0;
   }
 
-  .contact-page textarea {
+  .contact-form textarea {
     height: 200px; /* Aumenta área de digitação para conforto */
+  }
+
+  .contact-page button {
+    width: 100%;
   }
 
   /* FOOTER */
